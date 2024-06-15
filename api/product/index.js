@@ -32,4 +32,11 @@ router.get('/product/:code', (req, res) => {
     res.json(product);
 });
 
+/*
+ * Get data about all products
+*/
+router.get('/products', (req, res) => {
+    res.json(products);
+});
+
 export default router;
