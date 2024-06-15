@@ -1,0 +1,23 @@
+@font-face {
+    font-family: DMSans;
+    src: local("DMSans"), url("./fonts/DMSans-VariableFont_opsz\,wght.ttf") format("opentype");
+    font-weight: normal;
+}
+
+* {
+    font-family: "DMSans";
+}
+
+body {
+    background-color: #FAFAFA;
+}
+
+.App {
+    margin-top: 25px;
+    height: calc(100vh - 25px);
+}
+
+
+button {
+    cursor: pointer;
+}
