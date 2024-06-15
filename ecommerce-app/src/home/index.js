@@ -77,10 +77,10 @@ const DrinkCard = ({ id, brand, image, price }) => {
 
     // ! missing data for Lagunitas IPA, swap for Budweiser
     // ! hardcoded for the demo
-    // if (brand === "Lagunitas IPA") {
-    //     brand = "Budweiser";
-    //     image = "/products/budweiser.jpg";
-    // }
+    if (brand === "Lagunitas IPA") {
+        brand = "Budweiser";
+        image = "/products/budweiser.jpg";
+    }
 
     const redirectToProduct = (id, brand) => {
         navigate(`/${id}-${brand}`);

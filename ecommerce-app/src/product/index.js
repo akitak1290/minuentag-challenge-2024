@@ -18,7 +18,7 @@ export default function Product() {
     const { productSlug } = useParams();
     const slugs = productSlug.split('-');
     const id = slugs[0];
-    const brand = slugs.slice(1).map(
+    let brand = slugs.slice(1).map(
         (word) => word.charAt(0).toUpperCase() + word.slice(1)
     ).join(' ');
 
@@ -59,6 +59,14 @@ export default function Product() {
     if (fetchProductError || fetchStockPriceError ||
         productData.error || stockPriceData.error)
         return <span className={styles.loading}>Something went wrong</span>
+
+    // ! missing data for Lagunitas IPA, swap for Budweiser
+    // ! hardcoded for the demo
+    if (brand === "Lagunitas IPA") {
+        brand = "Budweiser";
+        productData.brand = "Budweiser";
+        productData.image = "/products/budweiser.jpg";
+    }
 
     const selectSku = (index) => {
         setCurrentSku(index);
