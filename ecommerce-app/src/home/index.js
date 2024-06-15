@@ -63,7 +63,7 @@ export default function Home() {
                 </div>
                 <div className={styles.popular_cards}>
                     {data.map((product, index) =>
-                        <DrinkCard id={product.id} brand={product.brand}
+                        <DrinkCard key={index} id={product.id} brand={product.brand}
                             image={product.image} price="2312" />
                     )}
                 </div>
@@ -87,7 +87,7 @@ const DrinkCard = ({ id, brand, image, price }) => {
     }
 
     return (
-        <div onClick={() => redirectToProduct(id, brand)} className={styles.drink_card}>
+        <div onClick={() => redirectToProduct(id, brand === "Budweiser" ? "Lagunitas IPA" : brand)} className={styles.drink_card}>
             <p>{brand}</p>
             <div className={styles.drink_card_image_container}>
                 <img src={image} alt={brand} />
