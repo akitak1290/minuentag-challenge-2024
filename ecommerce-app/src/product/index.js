@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useSWR from 'swr';
 
 import styles from './styles.module.scss';
@@ -10,6 +10,7 @@ export default function Product() {
     const [currentSku, setCurrentSku] = useState(0);
     const [currentPrice, setCurrentPrice] = useState(null);
     const [currentStock, setCurrentStock] = useState(null);
+    const navigate = useNavigate();
     /* 
     * Assume that the url format is /productId-productName
     * where productName is in the format word1-word2-word3-.. 
@@ -65,8 +66,13 @@ export default function Product() {
 
     return (
         <div className={styles.container}>
+            <div className={styles.nav_desktop}>
+                <span onClick={() => navigate('/')}>products</span>/product/{brand}
+            </div>
             <div className={styles.nav}>
-                <button><img src="/icons/icon-back.png" alt="back" /></button>
+                <button onClick={() => navigate('/')}>
+                    <img src="/icons/icon-back.png" alt="back" />
+                </button>
                 <h4>Detail</h4>
                 <button><img src="/icons/icon-dots.png" alt="menu" /></button>
             </div>
