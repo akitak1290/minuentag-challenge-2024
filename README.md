@@ -11,8 +11,8 @@ The challenge set can be found under challenge/
     - `/api/stock-price/code` to get the most up-to-date stock and price of a produce.
 
 - Each applications need to be run individually:
-    - do `cd /api` and do `npm start` to start the server on port 3001.
-    - do `cd /ecommerce-app` and do `npm start` to start the `React` app on port 3000.
+    - do `cd /api` and do `npm i` and `npm start` to start the server on port 3001.
+    - do `cd /ecommerce-app` and do `npm i` and `npm start` to start the `React` app on port 3000.
 
 ## The python script
 - The answers to 5 questions are in the script
